@@ -1,0 +1,54 @@
+import pandas as pd
+
+def generate_table():
+    digit = int(input("Enter the digit for the table:"))
+    length = int(input("Enter the length of the table:"))
+    print(f"Table for {digit}:")
+    for i in range(1, length + 1):
+        print(f"{digit} x {i} = {digit * i}")
+
+def calculate_exponential():
+    digit = int(input("Enter the digit:"))
+    power = int(input("Enter the power:"))
+    result = digit ** power
+    print(f"{digit} raised to the power of {power} is {result}")
+
+def simple_calculator():
+    operation = input("Choose operation (+, -, *, /):")
+    num1 = float(input("Enter the first number:"))
+    num2 = float(input("Enter the second number:"))
+
+    if operation == '+':
+        print(f"{num1} + {num2} = {num1 + num2}")
+    elif operation == '-':
+        print(f"{num1} - {num2} = {num1 - num2}")
+    elif operation == '*':
+        print(f"{num1} * {num2} = {num1 * num2}")
+    elif operation == '/':
+        if num2 != 0:
+            print(f"{num1} / {num2} = {num1 / num2}")
+        else:
+            print("Error: Division by zero")
+    else:
+        print("Invalid operation")
+
+while True:
+    print("\nOptions:")
+    print("1. Table Generate")
+    print("2. Exponential Calculator")
+    print("3. Simple Calculator")
+    print("4. Exit")
+
+    choice = input("Enter your choice:")
+
+    if choice == '1':
+        generate_table()
+    elif choice == '2':
+        calculate_exponential()
+    elif choice == '3':
+        simple_calculator()
+    elif choice == '4':
+        print("Exiting the Math Guide App. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please enter a number between 1 and 4.")
